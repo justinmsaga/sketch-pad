@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: helvetica;
+  font-size: 1.5rem;
+  background-color: grey;
+  color: black;
+}
+
+.title{
+  background-color: green;
+  padding: 0.5rem;
+}
+
+.highlight{
+  background-color: yellow;
+  color: black;
+  border-radius: 5px;
+}
+
+.desc{
+  background-color: orange;
+  color: black;
+  padding: 0.2rem;
+}
+
+button{
+  border: 1px none white;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+
+.self{
+  background-color: red;
+}
+
+.hide{
+  display: none;
+}
+
+#today{
+  background-color: orange;
+}
+
+li{
+  margin: 1rem;
+}
+
