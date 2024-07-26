@@ -4,7 +4,9 @@
 const updateSelf = (id) => {
   let selfLink = document.getElementById(id);
   selfLink.classList.add("self");
-  selfLink.innerText = "more about me in the next update"
+  selfLink.innerText = "me in a haiku"
+  let haiku = document.getElementById("haiku");
+  haiku.classList.remove("hide");
 }
 
 //add event listener to button
@@ -15,15 +17,12 @@ for (let b of buttons) {
     });
 };
 
-
-
 //display highlight
 
 //func to show highlight
-const setShow = (id, btn) => {
+const setShow = (id) => {
 	let high = document.getElementById(id);
   high.classList.remove("hide");
-  //btn.classList.remove("highlight");
 };
 
 //add eventlistener to show highlight buttons
@@ -34,11 +33,10 @@ for(let b of highBtn){
   });
 };
 
-
 //today update
 
 const today = document.getElementById("today");
 today.addEventListener("click", () =>{
-  today.innerText = "this website is the current idea";
-  today.style.backgroundColor = "red";
+  today.innerText = "current idea: haiku introductions";
+  setShow("playlistIntro");
 })

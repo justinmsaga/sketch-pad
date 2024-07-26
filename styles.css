@@ -4,7 +4,7 @@
 
 body{
   font-family: helvetica;
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: grey;
   color: black;
 }
@@ -29,7 +29,7 @@ body{
 button{
   border: 1px none white;
   border-radius: 5px;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 
@@ -49,3 +49,19 @@ li{
   margin: 1rem;
 }
 
+#haiku{
+  margin: 0rem;
+  background-color: skyblue;
+}
+
+td{
+  padding: 1rem;
+}
+
+#playlistIntro{
+  background-color: skyblue;
+}
+
+.bold{
+  font-weight: bold;
+}
