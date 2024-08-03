@@ -30,16 +30,13 @@ button{
   border: 1px none white;
   border-radius: 5px;
   font-size: 3rem;
+  box-shadow: 0px 10px 5px black;
 }
-
 
 .self{
   background-color: red;
 }
 
-.hide{
-  display: none;
-}
 
 #today{
   background-color: orange;
@@ -54,14 +51,62 @@ li{
   background-color: skyblue;
 }
 
-td{
-  padding: 1rem;
+.media{
+  box-shadow: 0px 10px 5px black;
 }
 
-#playlistIntro{
+.audio{
+  grid-area: audio;
+}
+
+.video{
+  grid-area: video;
+}
+
+.mediaDesc{
+  grid-area: desc;
+}
+
+.mediaFile{
+  grid-area: file;
+}
+
+.mediaShow{
+  grid-area: btns;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem 2rem;
+}
+
+.mediaDisp{
+  grid-area: media;
+  display: grid;
+  grid-template-areas: 
+    ". file desc ."
+    "btns btns btns btns";
+  align-items: center;
+  gap: 2rem 2rem;
+}
+
+
+.player{
   background-color: skyblue;
+  display: grid;
+  grid-template-areas: 
+    "audio . . video"
+    "media media media media";
+  gap: 1rem 3rem;
+  align-items: center;
+}
+    
+.hide{
+  display: none;
 }
 
 .bold{
   font-weight: bold;
+}
+
+.clicked{
+  box-shadow: 0px 10px 5px red;
 }
