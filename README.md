@@ -1,1 +1,3 @@
-an place to experminet with current learnings
+an place to experiment with current learnings
+
+https://msga.cloud for the live site
