@@ -2,10 +2,10 @@
 const updateSelf = (id) => {
   let selfLink = document.getElementById(id);
   selfLink.classList.add("self");
-  selfLink.innerText = "me in a haiku"
+  selfLink.innerText = "me in a haiku";
   let haiku = document.getElementById("haiku");
   haiku.classList.remove("hide");
-}
+};
 
 //add event listener to button
 const buttons = document.getElementsByClassName("selfBtn");
@@ -13,7 +13,7 @@ for (let b of buttons) {
   b.addEventListener("click", () => {
     updateSelf("addSelf");
   });
-};
+}
 
 //display highlight
 
@@ -29,92 +29,98 @@ for (let b of highBtn) {
   b.addEventListener("click", () => {
     setShow(b.name);
   });
-};
+}
 
 //today update
 const today = document.getElementById("today");
 today.addEventListener("click", () => {
   setShow(today.name);
   today.innerText = "current idea: media player";
-})
+});
 
 //display media
+
+//audio data
 const tracks = [
   {
-    name: "track 1",
-    length: "00:00",
-    source: "",
-    desc: "one"
+    name: "forest ambient",
+    length: "2:43",
+    source: "XMYjams6H21In5Dydv9RpbLf7Y8OGeVGHw-jLJfSlAE",
+    desc: "live from the deerverse",
   },
   {
-    name: "track 2",
-    length: "00:00",
-    source: "",
-    desc: "two"
+    name: "forest ambient",
+    length: "3:39",
+    source: "b9pTlr81xdUwEsq17Cf45Zmed20DuV_UUEuxVg-V8Yo",
+    desc: "live from the deerverse",
   },
   {
-    name: "track 3",
-    length: "00:00",
-    source: "",
-    desc: "three"
+    name: "ocarina play",
+    length: "1:58",
+    source: "_Gf4e51EX5QnDGyVZec6n7CxjiBxGr9mRxTV9Il7FRI",
+    desc: "improv",
   },
   {
-    name: "track 4",
-    length: "00:00",
-    source: "",
-    desc: "four"
+    name: "forest ambient",
+    length: "1:06",
+    source: "IIgfgz0eCFPX8z_BY1-Q-bjNzudAfBzcYQ8dBkC7Rro",
+    desc: "live from the deerverse",
   },
   {
-    name: "track 5",
-    length: "00:00",
-    source: "",
-    desc: "five"
+    name: "ocarina play",
+    length: "2:11",
+    source: "6HgdrgDyAyb3kVgu7PNvHYmP-ZgRrOSI4ueXp8LfoK4",
+    desc: "haiku",
   },
   {
-    name: "track 6",
-    length: "00:00",
-    source: "",
-    desc: "six"
+    name: "forest ambient",
+    length: "1:17",
+    source: "xOlignwX8uEyGY7acFvUe_toORMm6P7TIynhzksvWgo",
+    desc: "live from the deerverse",
   },
-  {
-    name: "track 7",
-    length: "00:00",
-    source: "",
-    desc: "seven"
-  }
-]
-
+];
+//video data
 const vids = [
   {
-    name: "let there be light",
-    length: "2:36",
-    source: "6DUxyflSM_8UEMGslYRLCJaQQXCuNks_iIOH1EOJ1Fk",
-    desc: "initial spark"
+    name: "home boy",
+    length: "0:20",
+    source: "OsDcnw9GC0MWUr3_q7MhbiBlu5sAPeSWLSsqnaS5rxU",
+    desc: "meals in the hood",
   },
   {
-    name: "if alive",
-    length: "0:11",
-    source: "RTRXhvNqhvm4jRf_Q6V1wtorg9nYs9c4zW_euxL_kRk",
-    desc: "filosofie"
+    name: "home girl",
+    length: "0:30",
+    source: "uKl_QHvtg3K-eifc5FNGDsZnwCumFuMh4IHi9yo4TH8",
+    desc: "meals in the park",
   },
   {
-    name: "welcome",
-    length: "26:43",
-    source: "GtRAbq8kKz_aO6PEqvngsMnBW_l3X4kN0nOAK5y8Y4M",
-    desc: "algo"
-  }
-]
+    name: "woodpecker",
+    length: "1:40",
+    source: "cUlcbvNjC9CRsFcOYx-Udk6CSekwNAfJlF0sK5Af4aI",
+    desc: "pecking on a clear day",
+  },
+];
 
+//get media elements from page
 const mediaSection = document.getElementById("displayMedia");
 const audioBtn = document.getElementById("audio");
 const videoBtn = document.getElementById("video");
 
+function clearBtn() {
+  const btns = document.getElementsByClassName("selector");
+  for (let b of btns) {
+    b.classList.remove("clicked");
+  }
+}
+
+//add media and selection items to media section
 const showMedia = (id) => {
-  setShow("displayMedia");
+  //show media
+  mediaSection.classList.remove("hide");
 
   //clear media section
   while (mediaSection.hasChildNodes()) {
-    mediaSection.removeChild((mediaSection.firstChild));
+    mediaSection.removeChild(mediaSection.firstChild);
   }
 
   //update buttons to select media
@@ -124,13 +130,12 @@ const showMedia = (id) => {
 
   //add media description
   let mediaDesc = document.createElement("p");
-  mediaDesc.innerHTML = `select media below`;
+  mediaDesc.innerHTML = `July sessions below`;
   mediaDesc.setAttribute("class", "mediaDesc");
   mediaSection.appendChild(mediaDesc);
 
   //set media file to audio
   if (id === "field recordings") {
-
     //add audio element
     let audio = document.createElement("audio");
     audio.setAttribute("controls", "controls");
@@ -142,10 +147,13 @@ const showMedia = (id) => {
       let medBtn = document.createElement("button");
       medBtn.innerHTML = `${tracks[i].name} <br> ${tracks[i].length}`;
       medBtn.setAttribute("name", i);
-      
+      medBtn.classList.add("selector");
+
       medBtn.addEventListener("click", () => {
-        audio.src = tracks[i].source;
+        audio.src = `https://arweave.net/${tracks[i].source}`;
         mediaDesc.innerHTML = tracks[i].desc;
+        clearBtn();
+        medBtn.classList.add("clicked");
       });
 
       selectSection.appendChild(medBtn);
@@ -157,8 +165,7 @@ const showMedia = (id) => {
   }
 
   //set media file to video
-  if (id === "live from the deerverse") {
-
+  if (id === "deerverse") {
     //add video element
     let video = document.createElement("video");
     video.setAttribute("controls", "controls");
@@ -170,11 +177,14 @@ const showMedia = (id) => {
       let medBtn = document.createElement("button");
       medBtn.innerHTML = `${vids[i].name} <br> ${vids[i].length}`;
       medBtn.setAttribute("name", i);
+      medBtn.classList.add("selector");
 
       //event listener to update video and desc when
       medBtn.addEventListener("click", () => {
         video.src = `https://arweave.net/${vids[i].source}`;
         mediaDesc.innerHTML = vids[i].desc;
+        clearBtn();
+        medBtn.classList.add("clicked");
       });
 
       //add button to select media section
@@ -185,7 +195,7 @@ const showMedia = (id) => {
     audioBtn.classList.remove("clicked");
     audioBtn.innerHTML = "audio";
   }
-}
+};
 
 const mediaBtns = document.getElementsByClassName("media");
 for (let b of mediaBtns) {
@@ -194,4 +204,4 @@ for (let b of mediaBtns) {
     b.classList.add("clicked");
     b.innerHTML = b.name;
   });
-};
+}

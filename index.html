@@ -1,50 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <title>sketch pad</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-<head>
-    <title>sketch pad</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <body>
+        <h1 class="title">hello world</h1>
 
-<body>
-    <h1 class="title">hello world</h1>
-
-    <p class="intro">welcome to
-        <button class="selfBtn self">my👋</button>
-        <button class="showHigh highlight" name="ego">idea pad🗒️</button>
-    </p>
-
-    <marquee> 🎵<span class="desc">selectors</span>📺</marquee>
-
-    <article class="hide" id="ego">
-        <p class="desc">a space for human(s) to get
-            <button class="showHigh highlight" name="idea">an idea out✏️</button>
-            <span id="idea" class="hide highlight">one idea at a time</span> <br>
-            because attention is scarce. <br>
-            we are always being pulled in so many different directions. <br>
-            this is
-            <button class="selfBtn self">my👋</button>
-            attempt to create a compass
+        <p class="intro">
+            welcome to
+            <button class="selfBtn self">my 👋🏿</button>
+            <button class="showHigh highlight" name="ego">idea pad🗒️</button>
         </p>
-    </article>
 
-    <h2 class="heading">where to from here</h2>
-    <ul>
-        <li id="addSelf">who am i✌️</li>
-        <article class="hide" id="haiku">
-            <p>name? irrelevant <br>
-                play is the focus, always<br>
-                make things, quieten</p>
+        <marquee>🎵 <span class="desc">selectors</span> 📺</marquee>
+
+        <article class="hide" id="ego">
+            <p class="desc">
+                a space for human(s) to get
+                <button class="showHigh highlight" name="idea">
+                    an idea out✏️
+                </button>
+                <span id="idea" class="hide highlight">one idea at a time</span>
+                <br />
+                because attention is scarce. <br />
+                we are always being pulled in so many different directions.
+                <br />
+                this is
+                <button class="selfBtn self">my 👋🏿</button>
+                attempt to create a compass
+            </p>
         </article>
-        <li>
-            <button id="today" class="showHigh" name="player">what idea are we looking into today💡</button>
-        </li>
-        <article class="hide player" id="player">
-            <button class="media audio" id="audio" name="field recordings">audio</button>
-            <button class="media video" id="video" name="live from the deerverse">video</button>
-            <div class="hide mediaDisp" id="displayMedia"></div>
-        </article>
-    </ul>
-    <script src="script.js"></script>
-</body>
+
+        <h2 class="heading">where to from here</h2>
+        <ul>
+            <li id="addSelf">who am i ✌🏿</li>
+            <article class="hide" id="haiku">
+                <p>
+                    name? irrelevant <br />
+                    play is the focus, always<br />
+                    make things, quieten
+                </p>
+            </article>
+            <li>
+                <button id="today" class="showHigh" name="player">
+                    what idea are we looking into today💡
+                </button>
+            </li>
+            <article class="hide player" id="player">
+                <button class="media audio" id="audio" name="field recordings">
+                    audio
+                </button>
+                <button class="media video" id="video" name="deerverse">
+                    video
+                </button>
+                <div class="hide mediaDisp" id="displayMedia"></div>
+            </article>
+        </ul>
+        <script src="script.js"></script>
+    </body>
 </html>

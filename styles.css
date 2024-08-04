@@ -1,112 +1,112 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body{
-  font-family: helvetica;
-  font-size: 3rem;
-  background-color: grey;
-  color: black;
+body {
+    font-family: helvetica;
+    font-size: 3rem;
+    background-color: grey;
+    color: black;
 }
 
-.title{
-  background-color: green;
-  padding: 0.5rem;
+.title {
+    background-color: green;
+    padding: 0.5rem;
 }
 
-.highlight{
-  background-color: yellow;
-  color: black;
-  border-radius: 5px;
+.highlight {
+    background-color: yellow;
+    color: black;
+    border-radius: 5px;
 }
 
-.desc{
-  background-color: orange;
-  color: black;
-  padding: 0.2rem;
+.desc {
+    background-color: orange;
+    color: black;
+    padding: 1rem;
 }
 
-button{
-  border: 1px none white;
-  border-radius: 5px;
-  font-size: 3rem;
-  box-shadow: 0px 10px 5px black;
+button {
+    border: 1px none white;
+    border-radius: 5px;
+    font-size: 3rem;
+    box-shadow: 0px 10px 5px black;
 }
 
-.self{
-  background-color: red;
+.self {
+    background-color: red;
 }
 
-
-#today{
-  background-color: orange;
+#today {
+    background-color: orange;
 }
 
-li{
-  margin: 1rem;
+li {
+    margin: 1rem;
 }
 
-#haiku{
-  margin: 0rem;
-  background-color: skyblue;
+#haiku {
+    margin: 0rem;
+    background-color: skyblue;
 }
 
-.media{
-  box-shadow: 0px 10px 5px black;
+.media {
+    box-shadow: 0px 10px 5px black;
 }
 
-.audio{
-  grid-area: audio;
+.audio {
+    grid-area: audio;
 }
 
-.video{
-  grid-area: video;
+.video {
+    grid-area: video;
 }
 
-.mediaDesc{
-  grid-area: desc;
+.mediaDesc {
+    grid-area: desc;
 }
 
-.mediaFile{
-  grid-area: file;
+.mediaFile {
+    grid-area: file;
+    max-width: 20rem;
 }
 
-.mediaShow{
-  grid-area: btns;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem 2rem;
+.mediaShow {
+    grid-area: btns;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 2rem;
 }
 
-.mediaDisp{
-  grid-area: media;
-  display: grid;
-  grid-template-areas: 
-    ". file desc ."
-    "btns btns btns btns";
-  align-items: center;
-  gap: 2rem 2rem;
+.mediaDisp {
+    grid-area: media;
+    display: grid;
+    grid-template-areas:
+        ". file desc ."
+        "btns btns btns btns";
+    align-items: center;
+    gap: 2rem 2rem;
 }
 
-
-.player{
-  background-color: skyblue;
-  display: grid;
-  grid-template-areas: 
-    "audio . . video"
-    "media media media media";
-  gap: 1rem 3rem;
-  align-items: center;
-}
-    
-.hide{
-  display: none;
+.player {
+    background-color: skyblue;
+    display: grid;
+    grid-template-areas:
+        "audio . . video"
+        "media media media media";
+    gap: 1rem 3rem;
+    align-items: center;
+    padding: 1rem;
 }
 
-.bold{
-  font-weight: bold;
+.hide {
+    display: none;
 }
 
-.clicked{
-  box-shadow: 0px 10px 5px red;
+.bold {
+    font-weight: bold;
+}
+
+.clicked {
+    box-shadow: 0px 10px 5px red;
 }
