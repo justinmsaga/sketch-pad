@@ -64,6 +64,7 @@ li {
 .section {
     display: grid;
     background-color: yellow;
+    gap: 0.5rem;
 }
 
 .hide {
