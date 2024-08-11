@@ -35,173 +35,88 @@ for (let b of highBtn) {
 const today = document.getElementById("today");
 today.addEventListener("click", () => {
   setShow(today.name);
-  today.innerText = "current idea: media player";
+  today.innerText = "current idea: playlist archive";
 });
 
-//display media
+//display playlists
 
-//audio data
-const tracks = [
+const playlists = [
   {
-    name: "forest ambient",
-    length: "2:43",
-    source: "XMYjams6H21In5Dydv9RpbLf7Y8OGeVGHw-jLJfSlAE",
-    desc: "live from the deerverse",
+    name: "low end theory 1",
+    length: "01:11:24",
+    songs: "16 songs",
+    links: {
+      spotify:
+        "https://open.spotify.com/playlist/6UGN6oWn6LYcIXRgMshPVU?si=61d7db7d6c8a45e8",
+      tidal:
+        "https://tidal.com/browse/playlist/289f34e0-af7f-49a6-a9a8-a9e9ea47aa5d",
+    },
   },
   {
-    name: "forest ambient",
-    length: "3:39",
-    source: "b9pTlr81xdUwEsq17Cf45Zmed20DuV_UUEuxVg-V8Yo",
-    desc: "live from the deerverse",
+    name: "low end theory 2",
+    length: "39:42",
+    songs: "13 songs",
+    links: {
+      spotify:
+        "https://open.spotify.com/playlist/5lYybba1KUo07RHhHYUevt?si=c0ea351936aa4eaf",
+      tidal:
+        "https://tidal.com/browse/playlist/9db9d175-4ecd-427b-a99e-9eda0d8f1cce",
+    },
   },
   {
-    name: "ocarina play",
-    length: "1:58",
-    source: "_Gf4e51EX5QnDGyVZec6n7CxjiBxGr9mRxTV9Il7FRI",
-    desc: "improv",
-  },
-  {
-    name: "forest ambient",
-    length: "1:06",
-    source: "IIgfgz0eCFPX8z_BY1-Q-bjNzudAfBzcYQ8dBkC7Rro",
-    desc: "live from the deerverse",
-  },
-  {
-    name: "ocarina play",
-    length: "2:11",
-    source: "6HgdrgDyAyb3kVgu7PNvHYmP-ZgRrOSI4ueXp8LfoK4",
-    desc: "haiku",
-  },
-  {
-    name: "forest ambient",
-    length: "1:17",
-    source: "xOlignwX8uEyGY7acFvUe_toORMm6P7TIynhzksvWgo",
-    desc: "live from the deerverse",
-  },
-];
-//video data
-const vids = [
-  {
-    name: "home boy",
-    length: "0:20",
-    source: "OsDcnw9GC0MWUr3_q7MhbiBlu5sAPeSWLSsqnaS5rxU",
-    desc: "meals in the hood",
-  },
-  {
-    name: "home girl",
-    length: "0:30",
-    source: "uKl_QHvtg3K-eifc5FNGDsZnwCumFuMh4IHi9yo4TH8",
-    desc: "meals in the park",
-  },
-  {
-    name: "woodpecker",
-    length: "1:40",
-    source: "cUlcbvNjC9CRsFcOYx-Udk6CSekwNAfJlF0sK5Af4aI",
-    desc: "pecking on a clear day",
+    name: "low end theory 3",
+    length: "32:08",
+    songs: "9 songs",
+    links: {
+      spotify:
+        "https://open.spotify.com/playlist/7kgEEYOZzXqHydQ3xHuo1P?si=4fbf32084aad4bcf",
+      tidal:
+        "https://tidal.com/browse/playlist/828556f0-18b8-42dd-bdeb-fdb9901764b7",
+    },
   },
 ];
 
-//get media elements from page
-const mediaSection = document.getElementById("displayMedia");
-const audioBtn = document.getElementById("audio");
-const videoBtn = document.getElementById("video");
+//section to display playlists
+const display = document.getElementById("playlists");
 
-function clearBtn() {
-  const btns = document.getElementsByClassName("selector");
-  for (let b of btns) {
-    b.classList.remove("clicked");
+//hide playlist details
+function clearSection() {
+  let sect = document.getElementsByClassName("section");
+  for (let s of sect) {
+    s.classList.add("hide");
   }
 }
 
-//add media and selection items to media section
-const showMedia = (id) => {
-  //show media
-  mediaSection.classList.remove("hide");
+//create link elements to playlists
+function createLink(link, name) {
+  let linkEl = document.createElement("a");
+  linkEl.setAttribute("href", link);
+  linkEl.innerHTML = name;
+  return linkEl;
+}
 
-  //clear media section
-  while (mediaSection.hasChildNodes()) {
-    mediaSection.removeChild(mediaSection.firstChild);
-  }
+//add select buttons for each playlist
+for (let i = 0; i < playlists.length; i++) {
+  //create button with playlist text
+  let playBtn = document.createElement("button");
+  playBtn.innerHTML = `${playlists[i].name} <br> ${playlists[i].length}`;
 
-  //update buttons to select media
-  let selectSection = document.createElement("div");
-  selectSection.setAttribute("class", "mediaShow");
-  mediaSection.appendChild(selectSection);
+  //add display section for when playlist is selected
+  let dispSect = document.createElement("div");
+  dispSect.setAttribute("id", i);
+  dispSect.innerHTML = `${playlists[i].songs}`;
+  dispSect.classList.add("hide", "section");
 
-  //add media description
-  let mediaDesc = document.createElement("p");
-  mediaDesc.innerHTML = `July sessions below`;
-  mediaDesc.setAttribute("class", "mediaDesc");
-  mediaSection.appendChild(mediaDesc);
+  dispSect.appendChild(createLink(playlists[i].links.spotify, "spotify"));
+  dispSect.appendChild(createLink(playlists[i].links.tidal, "tidal"));
 
-  //set media file to audio
-  if (id === "field recordings") {
-    //add audio element
-    let audio = document.createElement("audio");
-    audio.setAttribute("controls", "controls");
-    audio.setAttribute("class", "mediaFile");
-    mediaSection.appendChild(audio);
-
-    //select audio buttons
-    for (let i = 0; i < tracks.length; i++) {
-      let medBtn = document.createElement("button");
-      medBtn.innerHTML = `${tracks[i].name} <br> ${tracks[i].length}`;
-      medBtn.setAttribute("name", i);
-      medBtn.classList.add("selector");
-
-      medBtn.addEventListener("click", () => {
-        audio.src = `https://arweave.net/${tracks[i].source}`;
-        mediaDesc.innerHTML = tracks[i].desc;
-        clearBtn();
-        medBtn.classList.add("clicked");
-      });
-
-      selectSection.appendChild(medBtn);
-    }
-
-    //set video style to default
-    videoBtn.classList.remove("clicked");
-    videoBtn.innerHTML = "video";
-  }
-
-  //set media file to video
-  if (id === "deerverse") {
-    //add video element
-    let video = document.createElement("video");
-    video.setAttribute("controls", "controls");
-    video.setAttribute("class", "mediaFile");
-    mediaSection.appendChild(video);
-
-    //add select video buttons
-    for (let i = 0; i < vids.length; i++) {
-      let medBtn = document.createElement("button");
-      medBtn.innerHTML = `${vids[i].name} <br> ${vids[i].length}`;
-      medBtn.setAttribute("name", i);
-      medBtn.classList.add("selector");
-
-      //event listener to update video and desc when
-      medBtn.addEventListener("click", () => {
-        video.src = `https://arweave.net/${vids[i].source}`;
-        mediaDesc.innerHTML = vids[i].desc;
-        clearBtn();
-        medBtn.classList.add("clicked");
-      });
-
-      //add button to select media section
-      selectSection.appendChild(medBtn);
-    }
-
-    //set audio style to default
-    audioBtn.classList.remove("clicked");
-    audioBtn.innerHTML = "audio";
-  }
-};
-
-const mediaBtns = document.getElementsByClassName("media");
-for (let b of mediaBtns) {
-  b.addEventListener("click", () => {
-    showMedia(b.name);
-    b.classList.add("clicked");
-    b.innerHTML = b.name;
+  //handler to display playlist details in section
+  playBtn.addEventListener("click", () => {
+    clearSection();
+    dispSect.classList.remove("hide");
   });
+
+  //add button and display section to playlist div
+  display.appendChild(playBtn);
+  display.appendChild(dispSect);
 }

@@ -54,49 +54,16 @@ li {
     box-shadow: 0px 10px 5px black;
 }
 
-.audio {
-    grid-area: audio;
-}
-
-.video {
-    grid-area: video;
-}
-
-.mediaDesc {
-    grid-area: desc;
-}
-
-.mediaFile {
-    grid-area: file;
-    max-width: 20rem;
-}
-
-.mediaShow {
-    grid-area: btns;
+.playlists {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem 2rem;
-}
-
-.mediaDisp {
-    grid-area: media;
-    display: grid;
-    grid-template-areas:
-        ". file desc ."
-        "btns btns btns btns";
-    align-items: center;
-    gap: 2rem 2rem;
-}
-
-.player {
+    grid-template-columns: 1fr;
     background-color: skyblue;
+    gap: 1rem;
+}
+
+.section {
     display: grid;
-    grid-template-areas:
-        "audio . . video"
-        "media media media media";
-    gap: 1rem 3rem;
-    align-items: center;
-    padding: 1rem;
+    background-color: yellow;
 }
 
 .hide {
