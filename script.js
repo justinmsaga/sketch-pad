@@ -154,7 +154,7 @@ function clearMedia() {
 
 /* add selected media buttons
 medfiles - array of media files
-media - media element (audio or vide)
+media - media element (audio video or image)
 desciption - media description element
 section - html page element where buttons will be displayed */
 function mediaButtons(medFiles, media, description, section) {
@@ -169,6 +169,7 @@ function mediaButtons(medFiles, media, description, section) {
     //event listener for media button to set source and update description
     medBtn.addEventListener("click", () => {
       media.src = `https://arweave.net/${medFiles[i].source}`;
+      mediaSection.appendChild(media);
       description.innerHTML = medFiles[i].desc;
       clearBtn();
       medBtn.classList.add("clicked");
@@ -196,7 +197,6 @@ const showMedia = (id) => {
 
   //add media description
   let mediaDesc = document.createElement("p");
-  mediaDesc.innerHTML = `July sessions below`;
   mediaDesc.setAttribute("class", "mediaDesc");
   mediaSection.appendChild(mediaDesc);
 
@@ -206,15 +206,14 @@ const showMedia = (id) => {
     let audio = document.createElement("audio");
     audio.setAttribute("controls", "controls");
     audio.setAttribute("class", "mediaFile");
-    mediaSection.appendChild(audio);
 
     // add select audio buttons to html page
     mediaButtons(tracks, audio, mediaDesc, selectSection);
 
-    //set video style to default
-    //videoBtn.classList.remove("clicked");
-    //videoBtn.innerHTML = "video";
+    //set select media to default
     clearMedia();
+
+    mediaDesc.innerHTML = `field recordings`;
   }
 
   //set media file to video
@@ -223,26 +222,29 @@ const showMedia = (id) => {
     let video = document.createElement("video");
     video.setAttribute("controls", "controls");
     video.setAttribute("class", "mediaFile");
-    mediaSection.appendChild(video);
 
     //add select video buttons to html page
     mediaButtons(vids, video, mediaDesc, selectSection);
 
-    //set audio style to default
-    //audioBtn.classList.remove("clicked");
-    //audioBtn.innerHTML = "audio";
-
+    //set select media to default
     clearMedia();
+
+    mediaDesc.innerHTML = `live from the deerverse`;
   }
 
   //set media file to pic
   if (id === "poly") {
     //add img element
     let pic = document.createElement("img");
-    mediaSection.appendChild(pic);
+    pic.setAttribute("alt", "poly art here");
 
+    //add select image buttons to page
     mediaButtons(pics, pic, mediaDesc, selectSection);
+
+    //set select media to default
     clearMedia();
+
+    //update description
     mediaDesc.innerHTML = "playin' with polygons";
   }
 };
