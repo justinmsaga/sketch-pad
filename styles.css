@@ -54,54 +54,17 @@ li {
     box-shadow: 0px 10px 5px black;
 }
 
-.audio {
-    grid-area: audio;
-}
-
-.video {
-    grid-area: video;
-}
-
-.image {
-    grid-area: image;
-}
-
-.mediaDesc {
-    grid-area: desc;
-}
-
-.mediaFile {
-    grid-area: file;
-    max-width: 50vw;
-}
-
-.mediaShow {
-    grid-area: btns;
+.playlists {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem 2rem;
-}
-
-.mediaDisp {
-    grid-area: media;
-    display: grid;
-    grid-template-areas:
-        "file file desc ."
-        "btns btns btns btns";
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 2rem 2rem;
-}
-
-.player {
+    grid-template-columns: 1fr;
     background-color: skyblue;
+    gap: 1rem;
+}
+
+.section {
     display: grid;
-    grid-template-areas:
-        "audio image video"
-        "media media media";
-    gap: 1rem 3rem;
-    align-items: center;
-    padding: 1rem;
+    background-color: yellow;
+    gap: 0.5rem;
 }
 
 .hide {
@@ -114,8 +77,4 @@ li {
 
 .clicked {
     box-shadow: 0px 10px 5px red;
-}
-img {
-    max-width: 50vw;
-    grid-area: file;
 }
