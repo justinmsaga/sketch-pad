@@ -20,10 +20,17 @@ body {
     border-radius: 5px;
 }
 
+#idea {
+    animation-name: slideInRev;
+    animation-duration: 1s;
+}
+
 .desc {
     background-color: orange;
     color: black;
     padding: 1rem;
+    animation-name: slideIn;
+    animation-duration: 1s;
 }
 
 button {
@@ -31,6 +38,13 @@ button {
     border-radius: 5px;
     font-size: 3rem;
     box-shadow: 0px 10px 5px black;
+    transition-duration: 0.2s;
+    transition-property: transform, box-shadow;
+    transition-delay: 0s, 0.3s;
+}
+
+button:active {
+    transform: translateY(10%);
 }
 
 .self {
@@ -48,23 +62,66 @@ li {
 #haiku {
     margin: 0rem;
     background-color: skyblue;
+    animation-name: slideIn;
+    animation-duration: 1s;
 }
 
 .media {
     box-shadow: 0px 10px 5px black;
 }
 
-.playlists {
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: skyblue;
-    gap: 1rem;
+.audio {
+    grid-area: audio;
 }
 
-.section {
+.video {
+    grid-area: video;
+}
+
+.image {
+    grid-area: image;
+}
+
+.mediaDesc {
+    grid-area: desc;
+}
+
+.mediaFile {
+    grid-area: file;
+    max-width: 50vw;
+}
+
+.mediaShow {
+    grid-area: btns;
     display: grid;
-    background-color: yellow;
-    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 2rem;
+    animation-name: slide;
+    animation-duration: 0.5s;
+}
+
+.mediaDisp {
+    grid-area: media;
+    display: grid;
+    grid-template-areas:
+        "file file desc ."
+        "btns btns btns btns";
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem 2rem;
+}
+
+.player {
+    background-color: skyblue;
+    display: grid;
+    grid-template-areas:
+        "audio image video"
+        "media media media";
+    gap: 1rem 3rem;
+    align-items: center;
+    padding: 1rem;
+    animation-name: slideInBtm;
+    animation-duration: 1s;
 }
 
 .hide {
@@ -77,4 +134,68 @@ li {
 
 .clicked {
     box-shadow: 0px 10px 5px red;
+}
+img {
+    max-width: 50vw;
+    grid-area: file;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slideInRev {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slideInBtm {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
