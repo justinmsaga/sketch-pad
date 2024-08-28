@@ -21,7 +21,7 @@ body {
 }
 
 #idea {
-    animation-name: slideInRev;
+    animation-name: slide;
     animation-duration: 1s;
 }
 
@@ -29,7 +29,7 @@ body {
     background-color: orange;
     color: black;
     padding: 1rem;
-    animation-name: slideIn;
+    animation-name: slide;
     animation-duration: 1s;
 }
 
@@ -62,7 +62,7 @@ li {
 #haiku {
     margin: 0rem;
     background-color: skyblue;
-    animation-name: slideIn;
+    animation-name: slide;
     animation-duration: 1s;
 }
 
@@ -120,7 +120,7 @@ li {
     gap: 1rem 3rem;
     align-items: center;
     padding: 1rem;
-    animation-name: slideInBtm;
+    animation-name: slide;
     animation-duration: 1s;
 }
 
@@ -138,54 +138,6 @@ li {
 img {
     max-width: 50vw;
     grid-area: file;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-@keyframes slideInRev {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-@keyframes slideInBtm {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
 }
 
 @keyframes slide {
