@@ -6,61 +6,39 @@
     </head>
 
     <body>
-        <h1 class="title">hello world</h1>
+        <header>
+            <h1 class="palette inspo">want to play a game?</h1>
+        </header>
 
-        <p class="intro">
-            welcome to
-            <button class="selfBtn self">my 👋🏿</button>
-            <button class="showHigh highlight" name="ego">idea pad🗒️</button>
+        <p>
+            <span class="love">fire</span>
+            beats everything except
+            <span class="ego">water</span>
         </p>
 
-        <marquee>🎵 <span class="desc">mo selectors!!</span> 📺</marquee>
+        <p>
+            you know the rules of
+            <span class="home">rock</span>
+            <span class="earth">paper</span>
+            <span class="self">scissors</span>
+        </p>
 
-        <article class="hide" id="ego">
-            <p class="desc">
-                a space for human(s) to get
-                <button class="showHigh highlight" name="idea">
-                    an idea out✏️
-                </button>
-                <span id="idea" class="hide highlight">one idea at a time</span>
-                <br />
-                because attention is scarce. <br />
-                we are always being pulled in so many different directions.
-                <br />
-                this is
-                <button class="selfBtn self">my 👋🏿</button>
-                attempt to create a compass
-            </p>
-        </article>
+        <p>
+            <span class="ego">water</span>
+            only beats
+            <span class="love">fire</span>
+        </p>
 
-        <h2 class="heading">where to from here</h2>
-        <ul>
-            <li id="addSelf">who am i ✌🏿</li>
-            <article class="hide" id="haiku">
-                <p>
-                    name? irrelevant <br />
-                    play is the focus, always<br />
-                    make things, quieten
-                </p>
-            </article>
-            <li>
-                <button id="today" class="showHigh" name="player">
-                    what idea are we looking into today💡
-                </button>
-            </li>
-            <article class="hide player" id="player">
-                <button class="media audio" id="audio" name="field recordings">
-                    audio
-                </button>
-                <button class="media video" id="video" name="deerverse">
-                    video
-                </button>
-                <button class="media image" id="image" name="poly">
-                    image
-                </button>
-                <div class="hide mediaDisp" id="displayMedia"></div>
-            </article>
-        </ul>
+        <p id="score"></p>
+
+        <footer>
+            <button class="palette love" name="love">fire</button>
+            <button class="palette home" name="home">rock</button>
+            <button class="palette earth" name="earth">paper</button>
+            <button class="palette self" name="self">scissors</button>
+            <button class="palette ego" name="ego">water</button>
+        </footer>
+
         <script src="script.js"></script>
     </body>
 </html>
