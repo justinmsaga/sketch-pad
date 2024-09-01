@@ -25,6 +25,7 @@
     h1 {
         background: var(--home);
         margin: 0;
+        padding-left: 1rem;
     }
 
     nav {
@@ -42,6 +43,7 @@
 
     p {
         color: black;
+        margin-left: 1rem;
     }
 }
 
