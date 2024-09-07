@@ -63,31 +63,28 @@
             <ol>
                 <div id="main">
                     <li>
-                        mash banana, add lemon juice ->
+                        mash banana, add lemon juice [banana] ->
                         <button class="process" name="banana">
                             [banana mix] done?
                         </button>
                     </li>
                     <li>
                         mix flour, baking soda, baking powder, salt, cinnamon
-                        -><button class="process" name="dry">
+                        [dry] -><button class="process" name="dry">
                             [dry mix] done?
                         </button>
                     </li>
                     <li>
-                        mix both sugar, butter -><button
+                        mix both sugar, butter [main] -><button
                             class="process"
                             name="sugar"
                         >
-                            [sugar mix] done?
+                            [main mix] started?
                         </button>
                     </li>
                     <li>
-                        add eggs to [sugar mix] -><button
-                            class="process"
-                            name="egg"
-                        >
-                            egg added?
+                        add eggs to [main] -><button class="process" name="egg">
+                            egg added? [main mix]
                         </button>
                     </li>
                     <li>
@@ -95,11 +92,11 @@
                             class="process"
                             name="main"
                         >
-                            [main mix] started?
+                            [banana mix] into [main mix]?
                         </button>
                     </li>
                 </div>
-                <div id="full">
+                <div class="hide" id="full">
                     <li>
                         add vanilla to [main mix] -><button
                             class="process"
@@ -128,11 +125,11 @@
                     <li>
                         fold in [dry mix] into [main mix](do NOT over
                         mix)<button class="process" name="full">
-                            folded mix done?
+                            final mix done?
                         </button>
                     </li>
                 </div>
-                <div id="bake">
+                <div class="hide" id="bake">
                     <li>bake @325F for 1 hour + time for clear poke stick</li>
                     <li>cool in pan for 5 mins</li>
                     <li>cool on rack for 1-24 hrs</li>
