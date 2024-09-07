@@ -7,36 +7,146 @@
 
     <body>
         <header>
-            <h1 class="palette inspo">want to play a game?</h1>
+            <h1 class="home">banana bread</h1>
+
+            <p class="inspo">
+                <a
+                    href="https://divascancook.com/moist-banana-bread-recipe-easy/"
+                    >the recipe</a
+                >
+                that started it all
+            </p>
         </header>
 
-        <p>
-            <span class="love">fire</span>
-            beats everything except
-            <span class="ego">water</span>
-        </p>
+        <main>
+            <h2>Ingredients</h2>
 
-        <p>
-            you know the rules of
-            <span class="home">rock</span>
-            <span class="earth">paper</span>
-            <span class="self">scissors</span>
-        </p>
+            <ul class="ingredients">
+                <div id="banana">
+                    <li>3 bananas</li>
+                    <li>1 tsp lemon juice</li>
+                </div>
+                <div id="dry">
+                    <li>2 cup flour</li>
+                    <li>1 tsp baking soda</li>
+                    <li>1 tsp baking powder</li>
+                    <li>1/2 tsp salt</li>
+                    <li>1 1/2 tsp cinnamon</li>
+                </div>
+                <div id="sugar">
+                    <li>1/2 cup white sugar</li>
+                    <li>1/2 cup brown sugar</li>
+                    <li>1/2 cup butter</li>
+                </div>
+                <div id="egg">
+                    <li>2 egg</li>
+                </div>
+                <div id="vanilla">
+                    <li>1 1/2 tsp vanilla extract</li>
+                </div>
+                <div id="milk">
+                    <li>
+                        1/2 cup buttermilk
+                        <ul>
+                            <li>1/2 tsp vinegar</li>
+                            <li>slightly less than 1/2 cup milk</li>
+                        </ul>
+                    </li>
+                </div>
+                <div id="nut">
+                    <li>1/2 cup walnut</li>
+                </div>
+            </ul>
 
-        <p>
-            <span class="ego">water</span>
-            only beats
-            <span class="love">fire</span>
-        </p>
+            <h2>process</h2>
 
-        <p id="score"></p>
+            <ol>
+                <div id="main">
+                    <li>
+                        mash banana, add lemon juice ->
+                        <button class="process" name="banana">
+                            [banana mix] done?
+                        </button>
+                    </li>
+                    <li>
+                        mix flour, baking soda, baking powder, salt, cinnamon
+                        -><button class="process" name="dry">
+                            [dry mix] done?
+                        </button>
+                    </li>
+                    <li>
+                        mix both sugar, butter -><button
+                            class="process"
+                            name="sugar"
+                        >
+                            [sugar mix] done?
+                        </button>
+                    </li>
+                    <li>
+                        add eggs to [sugar mix] -><button
+                            class="process"
+                            name="egg"
+                        >
+                            egg added?
+                        </button>
+                    </li>
+                    <li>
+                        add [banana mix] to [main mix] -><button
+                            class="process"
+                            name="main"
+                        >
+                            [main mix] started?
+                        </button>
+                    </li>
+                </div>
+                <div id="full">
+                    <li>
+                        add vanilla to [main mix] -><button
+                            class="process"
+                            name="vanilla"
+                        >
+                            vanilla added?
+                        </button>
+                    </li>
+
+                    <li>
+                        add buttermilk to [main mix] -><button
+                            class="process"
+                            name="milk"
+                        >
+                            buttermilk added?
+                        </button>
+                    </li>
+                    <li>
+                        add walnut to [dry mix]<button
+                            class="process"
+                            name="nut"
+                        >
+                            walnut added?
+                        </button>
+                    </li>
+                    <li>
+                        fold in [dry mix] into [main mix](do NOT over
+                        mix)<button class="process" name="full">
+                            folded mix done?
+                        </button>
+                    </li>
+                </div>
+                <div id="bake">
+                    <li>bake @325F for 1 hour + time for clear poke stick</li>
+                    <li>cool in pan for 5 mins</li>
+                    <li>cool on rack for 1-24 hrs</li>
+                </div>
+            </ol>
+        </main>
 
         <footer>
-            <button class="palette love" name="love">fire</button>
-            <button class="palette home" name="home">rock</button>
-            <button class="palette earth" name="earth">paper</button>
-            <button class="palette self" name="self">scissors</button>
-            <button class="palette ego" name="ego">water</button>
+            <div class="palette love"></div>
+            <div class="palette inspo"></div>
+            <div class="palette self"></div>
+            <div class="palette home"></div>
+            <div class="palette earth"></div>
+            <div class="palette ego"></div>
         </footer>
 
         <script src="script.js"></script>
