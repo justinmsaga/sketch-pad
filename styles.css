@@ -54,7 +54,7 @@
     }
 
     .crossout {
-        text-decoration: line-through;
+        text-decoration: line-through wavy var(--ego) 5px;
     }
 
     .done {
