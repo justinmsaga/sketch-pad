@@ -28,6 +28,7 @@
         background: var(--home);
         margin: 0;
         padding: 0.5rem;
+        color: var(--earth);
     }
 
     button {
