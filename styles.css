@@ -7,6 +7,7 @@
         --home: hsla(142, 100%, 37%, 1);
         --earth: hsla(37, 100%, 32%, 1);
         --base: slategrey;
+        --bottom: 1px solid black;
     }
 
     * {
@@ -30,59 +31,12 @@
         color: var(--earth);
     }
 
-    dl {
-        padding-left: 2rem;
-    }
-
-    dl dt {
-        font-weight: bold;
-    }
-
-    dt::after {
-        content: ": ";
-    }
-
-    dl div {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    dl div h3 {
-        -ms-grid-column-span: 2;
-    }
-
-    dd {
-        border: 1px solid var(--love);
-        grid-column-start: 2;
-    }
-
-    /* li {
-        display: flex;
-        justify-content: space-between;
-        }*/
-
-    button {
-        font-size: 1.5rem;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 10px;
-        transition: transform 0.2s;
-        transition: padding 0.2s 0.2s;
-    }
-
-    button:active {
-        transform: translateY(10%);
-    }
-
     p {
         color: black;
         padding-left: 1rem;
     }
 
     div {
-        border-bottom: 1px solid black;
         transition: text-decoration 2s;
     }
 
@@ -92,8 +46,41 @@
 }
 
 @layer ingredients {
+    dl dt {
+        font-weight: bold;
+    }
+    dt::after {
+        content: ": ";
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    dl > * {
+        border-bottom: var(--bottom);
+        padding: 0.5rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 10px;
+        transition: transform 0.2s;
+        transition: padding 0.2s 0.2s;
+    }
+    button:active {
+        transform: translateY(10%);
+    }
+    ol {
+        padding: 0;
+    }
     ol div {
         padding-left: 2.5rem;
+        border-bottom: var(--bottom);
     }
 
     .crossout {
