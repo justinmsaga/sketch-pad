@@ -23,13 +23,45 @@
     }
 
     h1,
-    h2,
-    h3 {
+    h2 {
         background: var(--home);
         margin: 0;
         padding: 0.5rem;
         color: var(--earth);
     }
+
+    dl {
+        padding-left: 2rem;
+    }
+
+    dl dt {
+        font-weight: bold;
+    }
+
+    dt::after {
+        content: ": ";
+    }
+
+    dl div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    dl div h3 {
+        -ms-grid-column-span: 2;
+    }
+
+    dd {
+        border: 1px solid var(--love);
+        grid-column-start: 2;
+    }
+
+    /* li {
+        display: flex;
+        justify-content: space-between;
+        }*/
 
     button {
         font-size: 1.5rem;
@@ -44,34 +76,14 @@
         transform: translateY(10%);
     }
 
-    span {
-        padding: 0.5rem;
-    }
-
     p {
         color: black;
-        margin-left: 1rem;
+        padding-left: 1rem;
     }
 
-    div {
-        transition: text-decoration 2s;
-    }
-}
-
-@layer ingredients {
     div {
         border-bottom: 1px solid black;
-        padding-left: 2rem;
-        padding-top: 0.5rem;
-    }
-
-    .crossout {
-        text-decoration: line-through wavy var(--ego) 5px;
-    }
-
-    .done {
-        padding: 0.1rem;
-        background-color: var(--home);
+        transition: text-decoration 2s;
     }
 
     .hide {
@@ -79,13 +91,29 @@
     }
 }
 
+@layer ingredients {
+    ol div {
+        padding-left: 2.5rem;
+    }
+
+    .crossout {
+        text-decoration: line-through wavy var(--ego) 3px;
+    }
+
+    .done {
+        padding: 0.1rem;
+        background-color: var(--home);
+    }
+}
+
 @layer footer {
     footer {
         display: flex;
         justify-content: center;
-        padding-top: 2rem;
+        padding: 1rem;
     }
-    .palette {
+
+    footer div {
         height: 3rem;
         width: 3rem;
     }
