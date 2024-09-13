@@ -1,24 +1,35 @@
-const processBtn = document.getElementsByClassName("process");
+const descriptions = {
+  forest: "you are here",
+  msaga: "the human",
+  msga: "a digital graffiti wall",
+  sk8: " an open studio",
+  baked: "a bakery in the cloud",
+};
+const btns = document.getElementsByClassName("section");
 
-function crossout(id) {
-  let ing = document.getElementById(id);
-  ing.classList.add("crossout");
+function updateBtn(children, name) {
+  for (let child of children) {
+    let innerChild = child.children;
+    for (let inner of innerChild) {
+      inner.innerHTML = inner.innerHTML + "👈🏿";
+    }
 
-  if (id === "main") {
-    let full = document.getElementById("full");
-    full.classList.remove("hide");
-  }
+    child.classList.add("selected");
+    let desc = document.createElement("p");
+    desc.innerHTML = `${name}`;
+    child.appendChild(desc);
 
-  if (id === "full") {
-    let full = document.getElementById("bake");
-    full.classList.remove("hide");
+    if (name === descriptions["msaga"]) {
+      let who = document.createElement("p");
+      who.innerHTML = `msaga + bushsk8r = ms@ga`;
+      child.appendChild(who);
+    }
   }
 }
 
-for (let b of processBtn) {
+for (let b of btns) {
   b.addEventListener("click", () => {
-    crossout(b.name);
-    b.innerHTML = "done";
-    b.classList.add("done");
+    updateBtn(b.children, descriptions[b.name]);
+    b.setAttribute("disabled", "disabled");
   });
 }

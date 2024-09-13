@@ -8,6 +8,11 @@
         --earth: hsla(37, 100%, 32%, 1);
         --base: slategrey;
         --bottom: 1px solid black;
+        --dark: black;
+
+        --underline: underline wavy var(--ego) 2px;
+
+        --boundaryBox: solid black 2px;
     }
 
     * {
@@ -20,76 +25,79 @@
         font-family: Helvetica, sans-serif;
         background-color: var(--base);
         color: var(--self);
-        font-size: 1.5rem;
+        font-size: 2rem;
+    }
+    marquee {
+        background: var(--home);
     }
 
     h1,
     h2 {
-        background: var(--home);
         margin: 0;
         padding: 0.5rem;
         color: var(--earth);
     }
 
-    p {
-        color: black;
-        padding-left: 1rem;
+    button {
+        border: var(--boundaryBox);
+        border-radius: 10px;
+        color: inherit;
+        font-size: inherit;
+        transition: transform 0.2s;
     }
 
-    div {
-        transition: text-decoration 2s;
+    button:active {
+        transform: translateY(5%);
     }
 
-    .hide {
-        display: none;
+    nav {
+        background: var(--self);
+        color: var(--base);
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 2fr 2fr;
+        list-style: none;
+        gap: 2rem;
+        padding: 0.5rem;
+    }
+
+    li {
+        padding: 1rem;
+    }
+
+    nav > ul > button:first-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    a,
+    a:any-link {
+        background: var(--love);
+        padding: 0.5rem;
+        text-decoration: var(--underline);
+        color: inherit;
+        font-size: inherit;
+        place-self: center;
     }
 }
 
-@layer ingredients {
-    dl dt {
-        font-weight: bold;
-    }
-    dt::after {
-        content: ": ";
+@layer nav {
+    p {
+        color: var(--love);
+        font-size: 2.5rem;
     }
 
-    dl {
+    p ~ p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .selected {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-    dl > * {
-        border-bottom: var(--bottom);
-        padding: 0.5rem;
-    }
-
-    button {
-        font-size: 1.5rem;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 10px;
-        transition: transform 0.2s;
-        transition: padding 0.2s 0.2s;
-    }
-    button:active {
-        transform: translateY(10%);
-    }
-    ol {
-        padding: 0;
-    }
-    ol div {
-        padding-left: 2.5rem;
-        border-bottom: var(--bottom);
-    }
-
-    .crossout {
-        text-decoration: line-through wavy var(--ego) 3px;
-    }
-
-    .done {
-        padding: 0.1rem;
-        background-color: var(--home);
     }
 }
 
@@ -122,5 +130,6 @@
     }
     .earth {
         background-color: var(--earth);
+        color: var(--base);
     }
 }
