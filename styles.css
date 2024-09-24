@@ -26,6 +26,7 @@
 
     .center {
         text-align: center;
+        color: var(--egoRed);
     }
 
     section {
@@ -88,7 +89,7 @@
     }
 
     .clicked {
-        box-shadow: 0 10px 5px var(--egoRed);
+        box-shadow: 0 10px 5px var(--selfBlue);
     }
 }
 
