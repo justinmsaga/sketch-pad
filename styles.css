@@ -1,103 +1,94 @@
 @layer base {
     :root {
-        --love: hsla(58, 100%, 60%, 1);
-        --inspo: orange;
-        --self: skyblue;
-        --ego: hsla(0, 100%, 40%, 1);
-        --home: hsla(142, 100%, 37%, 1);
-        --earth: hsla(37, 100%, 32%, 1);
-        --base: slategrey;
-        --bottom: 1px solid black;
-        --dark: black;
+        --loveYellow: hsla(58, 100%, 60%, 1);
+        --inspoOrange: orange;
+        --selfBlue: skyblue;
+        --egoRed: hsla(0, 100%, 40%, 1);
+        --homeGreen: hsla(142, 100%, 37%, 1);
+        --earthBrown: hsla(37, 100%, 32%, 1);
+        --baseGrey: slategrey;
 
-        --underline: underline wavy var(--ego) 2px;
-
-        --boundaryBox: solid black 2px;
+        * {
+            box-sizing: border-box;
+        }
     }
+}
 
-    * {
-        box-sizing: border-box;
-    }
-
+@layer body {
     body {
         margin: 0;
-        padding: 0;
+        padding: 1rem;
         font-family: Helvetica, sans-serif;
-        background-color: var(--base);
-        color: var(--self);
+        background-color: var(--baseGrey);
+        color: var(--selfBlue);
         font-size: 2rem;
     }
-    marquee {
-        background: var(--home);
+
+    .center {
+        text-align: center;
     }
 
-    h1,
-    h2 {
-        margin: 0;
-        padding: 0.5rem;
-        color: var(--earth);
-    }
-
-    button {
-        border: var(--boundaryBox);
-        border-radius: 10px;
-        color: inherit;
-        font-size: inherit;
-        transition: transform 0.2s;
-    }
-
-    button:active {
-        transform: translateY(5%);
-    }
-
-    nav {
-        background: var(--self);
-        color: var(--base);
-    }
-
-    ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr 2fr 2fr;
-        list-style: none;
-        gap: 2rem;
-        padding: 0.5rem;
-    }
-
-    li {
-        padding: 1rem;
-    }
-
-    nav > ul > button:first-child {
-        grid-column-start: 1;
-        grid-column-end: 3;
+    section {
+        color: black;
+        border: 5px dashed black;
+        text-align: center;
+        margin-top: 2rem;
     }
 
     a,
     a:any-link {
-        background: var(--love);
-        padding: 0.5rem;
-        text-decoration: var(--underline);
         color: inherit;
         font-size: inherit;
-        place-self: center;
+        text-decoration: underline wavy var(--inspoOrange) 2px;
     }
 }
 
-@layer nav {
-    p {
-        color: var(--love);
-        font-size: 2.5rem;
+@layer palette {
+    .love {
+        background-color: var(--loveYellow);
     }
 
-    p ~ p {
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .inspo {
+        background-color: var(--inspoOrange);
+    }
+    .self {
+        background-color: var(--selfBlue);
+    }
+    .ego {
+        background-color: var(--egoRed);
+    }
+    .home {
+        background-color: var(--homeGreen);
+    }
+    .earth {
+        background-color: var(--earthBrown);
+    }
+    .base {
+        background-color: var(--baseGrey);
+    }
+}
+
+@layer lists {
+    ul {
+        list-style: "🦌" inside;
     }
 
-    .selected {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    ol {
+        list-style: lower-roman inside;
+    }
+}
+
+@layer buttons {
+    button {
+        font: inherit;
+        border-radius: 10px;
+        padding: 0.5rem;
+        box-shadow: 0 10px 5px black;
+        transition: box-shadow 0.2s 0.3s;
+    }
+
+    .clicked {
+        box-shadow: 0 10px 5px var(--egoRed);
     }
 }
 
@@ -111,25 +102,5 @@
     footer div {
         height: 3rem;
         width: 3rem;
-    }
-
-    .love {
-        background-color: var(--love);
-    }
-    .inspo {
-        background-color: var(--inspo);
-    }
-    .self {
-        background-color: var(--self);
-    }
-    .ego {
-        background-color: var(--ego);
-    }
-    .home {
-        background-color: var(--home);
-    }
-    .earth {
-        background-color: var(--earth);
-        color: var(--base);
     }
 }
