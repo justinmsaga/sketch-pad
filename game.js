@@ -59,7 +59,7 @@ function play(p1, p2, p1Scr, p2Scr, gmeType, inst) {
       if (gmeType) {
         const agentSel = agent.autoSelect();
         updateScore(p1.el(agentSel), p1, agent);
-        inst.innerHTML = `${p1.el(agentSel)}<span class="inspo">Player 1 GO [1 player mode]</span> `;
+        inst.innerHTML = `${p1.el(agentSel)} Player 1 GO [1 player mode]`;
         p1Scr.innerHTML = `Player 1 score: ${p1.score}`;
         p2Scr.innerHTML = `agent score: ${agent.score}`;
         p1Select = "";
@@ -67,7 +67,7 @@ function play(p1, p2, p1Scr, p2Scr, gmeType, inst) {
     } else {
       const gg = p1.el(lmnt);
       updateScore(gg, p1, p2);
-      inst.innerHTML = `${gg} <span class="inspo">Player 1 GO [2 player mode]</span>`;
+      inst.innerHTML = `${gg} Player 1 GO [2 player mode]`;
       p1Scr.innerHTML = `Player 1 score: ${p1.score}`;
       p2Scr.innerHTML = `Player 2 score: ${p2.score}`;
       p1Select = "";
