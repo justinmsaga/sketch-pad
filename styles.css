@@ -98,10 +98,12 @@
     }
 }
 
-.hidden {
-    display: none;
-}
+@layer ui {
+    .hidden {
+        display: none;
+    }
 
-.under {
-    text-decoration: underline;
+    .under {
+        text-decoration: underline;
+    }
 }
