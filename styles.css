@@ -59,6 +59,9 @@
 }
 
 @layer gameBoard {
+    .palette {
+        padding: 2rem;
+    }
     .mode {
         display: flex;
         align-items: center;
