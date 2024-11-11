@@ -1,67 +1,55 @@
-import player from "./players.js";
-import play from "./game.js";
+import playlists from "./playlist.js";
 
-//players
-const play1 = new player("p1", 0, false);
-const play2 = new player("p2", 0, false);
+//display element from doc
+const displayArea = document.getElementById("dataList");
 
-//buttons
-const rulesBtn = document.getElementById("showRules");
-const playBtn = document.getElementById("play");
-const elementBtns = document.getElementsByClassName("palette");
-const autoBtn = document.getElementById("auto");
-
-//game sections
-const board = document.querySelector(".board");
-const rules = document.getElementById("rules");
-
-//text
-const playerInst = document.getElementById("who");
-
-//true = single player | false = multi player
-let gameType;
-
-//scoreboard
-const scoreBoard = document.getElementById("scoreBoard");
-
-//game object
-let game;
-
-//set visibility
-function updateVisibility(sect) {
-  sect.classList.remove("hidden");
+//create html element
+//inputs(element type, text context, hidden if true, element name)
+function createElem(type, text, hide, name) {
+  const elem = document.createElement(type);
+  elem.textContent = text;
+  if (name) {
+    elem.setAttribute("id", name);
+    elem.classList.add("desc");
+  }
+  if (hide) {
+    elem.classList.add("hidden");
+  }
+  return elem;
 }
 
-//button event handlers
-
-//show rules
-rulesBtn.addEventListener("click", () => {
-  updateVisibility(rules);
-});
-
-//setup game depending on game type,
-//true = one player | false = two player
-function gameSetup(type) {
-  updateVisibility(board);
-  playerInst.innerHTML = type
-    ? `1 player mode selected`
-    : `2 player mode selected`;
-  game = play(play1, play2, scoreBoard, type, playerInst);
+//add children to html element
+function addToTag(tag, comps) {
+  for (let c of comps) {
+    tag.appendChild(c);
+  }
 }
 
-//show game one player
-autoBtn.addEventListener("click", () => {
-  gameSetup(true);
-});
+//add playlists to display area data list
+for (let p of playlists) {
+  const playTitle = createElem("dt", p.title);
+  const div = createElem("div", "", true, p.title);
+  const playDesc = createElem("dd", p.desc);
+  const playNum = createElem("dd", `${p.total} playlists`);
+  addToTag(div, [playDesc, playNum]);
+  addToTag(displayArea, [playTitle, div]);
+}
 
-//show game two player
-playBtn.addEventListener("click", () => {
-  gameSetup(false);
-});
+//hide all descriptors
+function hideAll() {
+  const allDiv = document.querySelectorAll("div");
+  for (let d of allDiv) {
+    d.classList.add("hidden");
+  }
+}
 
-//player inputs
-for (let b of elementBtns) {
-  b.addEventListener("click", () => {
-    game(b.innerHTML);
+//add event handlers to playlist titles
+const titles = document.getElementsByTagName("dt");
+for (let t of titles) {
+  //display selected descriptors
+  t.addEventListener("click", () => {
+    hideAll();
+    const sect = document.getElementById(t.textContent);
+    sect.classList.remove("hidden");
   });
 }

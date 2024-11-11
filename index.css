@@ -1,0 +1,76 @@
+@layer base {
+    :root {
+        --love: hsla(58, 100%, 60%, 1);
+        --inspo: orange;
+        --self: skyblue;
+        --ego: hsla(0, 100%, 40%, 1);
+        --home: hsla(142, 100%, 37%, 1);
+        --earth: hsla(37, 100%, 32%, 1);
+        --base: slategrey;
+        --bottom: 1px solid black;
+        --dark: black;
+
+        --underline: underline wavy var(--ego) 2px;
+
+        --boundaryBox: solid black 2px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+}
+
+@layer text {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+        background-color: var(--base);
+        color: var(--self);
+        font-size: 2rem;
+    }
+
+    h1,
+    h2 {
+        margin: 0;
+        padding: 0.5rem;
+        color: var(--dark);
+        background: var(--home);
+    }
+
+    p {
+        padding: 0.5rem;
+        color: var(--inspo);
+    }
+
+    .desc {
+        color: var(--ego);
+        background: var(--love);
+        text-align: right;
+    }
+}
+
+@layer list {
+    dl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    dt {
+        grid-column-start: 1;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        border-left: 1px black solid;
+        padding: 0.3rem;
+    }
+
+    div {
+        grid-column-start: 2;
+        padding: 0.3rem;
+    }
+}
+.hidden {
+    display: none;
+}
