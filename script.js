@@ -35,21 +35,41 @@ for (let p of playlists) {
   addToTag(displayArea, [playTitle, div]);
 }
 
-//hide all descriptors
-function hideAll() {
-  const allDiv = document.querySelectorAll("div");
-  for (let d of allDiv) {
-    d.classList.add("hidden");
+function clicked() {
+  //variables to stored previous selected in closure
+  let selected = "";
+  let selectedDesc = "";
+
+  function updatedClicked(titleElem) {
+    //selected is the same as previous
+    if (selected === titleElem) {
+      selectedDesc.classList.add("hidden");
+      titleElem.classList.remove("selected");
+      selected = "";
+      selectedDesc = "";
+    } else {
+      //previous selected is not same as current
+      if (selected) {
+        selected.classList.remove("selected");
+        selectedDesc.classList.add("hidden");
+      }
+      //update previously selected
+      selected = titleElem;
+      titleElem.classList.add("selected");
+      selectedDesc = document.getElementById(titleElem.textContent);
+      selectedDesc.classList.remove("hidden");
+    }
   }
+  return updatedClicked;
 }
+
+let clickedTitle = clicked();
 
 //add event handlers to playlist titles
 const titles = document.getElementsByTagName("dt");
 for (let t of titles) {
   //display selected descriptors
   t.addEventListener("click", () => {
-    hideAll();
-    const sect = document.getElementById(t.textContent);
-    sect.classList.remove("hidden");
+    clickedTitle(t);
   });
 }
