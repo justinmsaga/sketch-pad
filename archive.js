@@ -23,6 +23,7 @@ const crate = {
   2024: [
     ["cul de sac vibes", "pirate radio", ""],
     ["war ready", "playlist", ""],
+    ["deerverse", "metaverse"]
   ],
   2023: [["echo chamber 2.0", "instrumentation / audio recording"]],
   2022: [["home bakers music club", "radio"]],
