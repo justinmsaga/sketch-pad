@@ -19,7 +19,7 @@ class archiveItem {
 
 const crate = {
   //[start year, end year]
-  range: [2014],
+  range: [2013, 2024],
   2024: [
     ["cul de sac vibes", "pirate radio", ""],
     ["war ready", "playlist", ""],
@@ -58,7 +58,7 @@ const crate = {
     ["poly punk", "low poly graphics"],
     ["welcome", "algorithmic composition"],
   ],
-  2013: [["bushsk8r", "tattoo"]],
+  2013: [["bushsk8r", "character design"]],
   getFromYear(year) {
     //return items from year
     return this[year];
