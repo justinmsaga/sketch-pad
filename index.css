@@ -83,3 +83,17 @@
         display: none;
     }
 }
+
+@layer buttons {
+    .selectors {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .selectors button {
+        border: none;
+        padding: 1rem;
+        margin: 2rem;
+        font: inherit;
+    }
+}
