@@ -73,11 +73,13 @@
     }
 }
 
-.selected {
-    border: 2px var(--love) solid;
-    text-decoration: var(--underline);
-}
+@layer interaction {
+    .selected {
+        border: 2px var(--love) solid;
+        text-decoration: var(--underline);
+    }
 
-.hidden {
-    display: none;
+    .hidden {
+        display: none;
+    }
 }

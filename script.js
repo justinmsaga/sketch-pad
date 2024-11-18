@@ -1,7 +1,31 @@
-import playlists from "./playlist.js";
+import curator from "./archive.js";
 
 //display element from doc
 const displayArea = document.getElementById("dataList");
+
+function displayCuration(year) {
+  let items = curator(year);
+  displayArea.innerHTML = "";
+
+  //add archive items to display area data list
+  for (let arcItem of items) {
+    const arcCuration = createElem("dt", arcItem.curation);
+    const div = createElem("div", "", true, arcItem.curation);
+    const arcCraft = createElem("dd", arcItem.craft);
+    const yearOfCreation = createElem("dd", arcItem.creation);
+    addToTag(div, [arcCraft, yearOfCreation]);
+    addToTag(displayArea, [arcCuration, div]);
+  }
+
+  //add event handlers to archive item titles
+  const titles = document.getElementsByTagName("dt");
+  for (let t of titles) {
+    //display selected descriptors
+    t.addEventListener("click", () => {
+      clickedTitle(t);
+    });
+  }
+}
 
 //create html element
 //inputs(element type, text context, hidden if true, element name)
@@ -25,38 +49,29 @@ function addToTag(tag, comps) {
   }
 }
 
-//add playlists to display area data list
-for (let p of playlists) {
-  const playTitle = createElem("dt", p.title);
-  const div = createElem("div", "", true, p.title);
-  const playDesc = createElem("dd", p.desc);
-  const playNum = createElem("dd", `${p.total} playlists`);
-  addToTag(div, [playDesc, playNum]);
-  addToTag(displayArea, [playTitle, div]);
-}
-
+//click handler for display item to display description
 function clicked() {
   //variables to stored previous selected in closure
   let selected = "";
   let selectedDesc = "";
 
-  function updatedClicked(titleElem) {
+  function updatedClicked(id) {
     //selected is the same as previous
-    if (selected === titleElem) {
+    if (selected === id) {
       selectedDesc.classList.add("hidden");
-      titleElem.classList.remove("selected");
+      id.classList.remove("selected");
       selected = "";
       selectedDesc = "";
     } else {
-      //previous selected is not same as current
+      //remove selected styling from previous selected
       if (selected) {
         selected.classList.remove("selected");
         selectedDesc.classList.add("hidden");
       }
-      //update previously selected
-      selected = titleElem;
-      titleElem.classList.add("selected");
-      selectedDesc = document.getElementById(titleElem.textContent);
+      //update selected to current
+      selected = id;
+      id.classList.add("selected");
+      selectedDesc = document.getElementById(id.textContent);
       selectedDesc.classList.remove("hidden");
     }
   }
@@ -65,11 +80,9 @@ function clicked() {
 
 let clickedTitle = clicked();
 
-//add event handlers to playlist titles
-const titles = document.getElementsByTagName("dt");
-for (let t of titles) {
-  //display selected descriptors
-  t.addEventListener("click", () => {
-    clickedTitle(t);
+const selectYear = document.getElementsByTagName("button");
+for (let b of selectYear) {
+  b.addEventListener("click", () => {
+    displayCuration(b.textContent);
   });
 }
