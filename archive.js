@@ -21,8 +21,28 @@ class archiveItem {
 // value = [curation, craft, source, file type]
 
 const crate = {
-  //[start year, end year]
-  range: [2013, 2024],
+  2021: [
+    [
+      "echo chamber 1.0",
+      "field recording",
+      "sGODBvlAnamWIdy-Op_hW14fKBTPWlZSZk4c3uibGos",
+      "audio",
+    ],
+    [
+      "playin with poly",
+      "low poly graphics",
+      "kwkRlqk3LUeYBiBPDSkDaMzZRmGK2NeBPxIHaaWmUp0",
+      "img",
+    ],
+  ],
+  2020: [
+    [
+      "human in the loop",
+      "studio recording",
+      "B2nYw9URD4fYF_CSCLdMKWA5_CCjnRrDdC95cMogaUk",
+      "audio",
+    ],
+  ],
   2018: [
     [
       "marisol",
@@ -56,6 +76,12 @@ const crate = {
     ],
   ],
   2017: [
+    [
+      "feed you tom toms",
+      "audio production",
+      "kwFFYuwlSXiLt-XF2_GOLqOUSatYnL9wDQrkVz6FmSI",
+      "audio",
+    ],
     [
       "let there be light",
       "mixtape",

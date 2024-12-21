@@ -20,19 +20,23 @@ function createElem(type, text, hide, name) {
 
 //create media element
 function createMedia(type, source) {
-  let elem = "";
+  let elem = document.createElement(type);
 
   switch (type) {
     case "video":
-      elem = document.createElement(type);
       elem.setAttribute("src", source);
       elem.setAttribute("controls", "controls");
       elem.classList.add("media");
       return elem;
 
     case "img":
-      elem = document.createElement(type);
       elem.setAttribute("src", source);
+      elem.classList.add("media");
+      return elem;
+
+    case "audio":
+      elem.setAttribute("src", source);
+      elem.setAttribute("controls", "controls");
       elem.classList.add("media");
       return elem;
 
@@ -104,12 +108,26 @@ function clicked() {
   }
   return updatedClicked;
 }
-
 let clickedTitle = clicked();
+
+//set styling on clicked button
+function btnClick() {
+  let click = "";
+  function updateClk(btn) {
+    if (btn != click) {
+      click ? click.classList.remove("clicked") : "";
+      click = btn;
+      btn.classList.add("clicked");
+    }
+  }
+  return updateClk;
+}
+let clickedBtn = btnClick();
 
 const selectYear = document.getElementsByTagName("button");
 for (let b of selectYear) {
   b.addEventListener("click", () => {
     displayCuration(b.textContent);
+    clickedBtn(b);
   });
 }
