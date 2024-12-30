@@ -21,6 +21,28 @@ class archiveItem {
 // value = [curation, craft, source, file type]
 
 const crate = {
+  2020: [
+    [
+      "city birds",
+      "field recording from Nairobi",
+      "zWlu348fGT5Ke96d8epoEjcGSAi-lyXtOFt8lfTN4tU",
+      "audio",
+    ],
+  ],
+  2019: [
+    [
+      "pushing through",
+      "note to future self from past self, keep going it gets better",
+      "C2FMt78fQofI5CbU02nKZYoV82cGguVFDLZZSv6lZS8",
+      "audio",
+    ],
+    [
+      "intro to mind palace",
+      "soundscape to my brain, the forest version 0",
+      "pVKVszbJHFsW1UJ1OZsWoSw-C12RqHA9eajEfmsun_Y",
+      "audio",
+    ],
+  ],
   2018: [
     [
       "collected",
