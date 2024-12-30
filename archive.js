@@ -7,7 +7,7 @@ class archiveItem {
     this.curation = item[1];
 
     //medium
-    this.craft = item[2];
+    this.desc = item[2];
 
     //item location
     this.source = `https://arweave.net/${item[3]}`;
@@ -21,56 +21,22 @@ class archiveItem {
 // value = [curation, craft, source, file type]
 
 const crate = {
-  2021: [
-    [
-      "echo chamber 1.0",
-      "field recording",
-      "sGODBvlAnamWIdy-Op_hW14fKBTPWlZSZk4c3uibGos",
-      "audio",
-    ],
-    [
-      "playin with poly",
-      "low poly graphics",
-      "kwkRlqk3LUeYBiBPDSkDaMzZRmGK2NeBPxIHaaWmUp0",
-      "img",
-    ],
-  ],
-  2020: [
-    [
-      "human in the loop",
-      "studio recording",
-      "B2nYw9URD4fYF_CSCLdMKWA5_CCjnRrDdC95cMogaUk",
-      "audio",
-    ],
-  ],
   2018: [
     [
-      "marisol",
-      "character design",
-      "6PqtBb2Aa-CpWLEGvt6ODIq4zG8PMmdNDjpL-mk6sd0",
-      "video",
-    ],
-    [
-      "life = true",
-      "animation",
-      "RTRXhvNqhvm4jRf_Q6V1wtorg9nYs9c4zW_euxL_kRk",
-      "video",
-    ],
-    [
-      "head in the cloud",
-      "animation",
-      "8_jxOoiyBImgCLmXNBDtsdP_mwO1A0_PNqm8tjIedvM",
-      "video",
-    ],
-    [
       "collected",
-      "animation",
-      "EV4Ks4PYNbT_03vfYjsJGnClKqDFxSlXcS7nrsfObPI",
-      "video",
+      "made this during my uni gradiation ceremony on my phone, from pure feel no headphones or speakers involved",
+      "0jTwYB_b9XurW-hqVJOxuhQhKK8mkFFh1MFNDa9yvVw",
+      "audio",
     ],
     [
-      "baked chronicles",
-      "playlist / zine",
+      "chanel remix",
+      "my version of chanel by frank ocean",
+      "qwEMejlP9FZ5terhB7iAHUUWx4BMQE-QcHOo3i8k6oI",
+      "audio",
+    ],
+    [
+      "feel the forest",
+      "an audio representation of my train of thought",
       "S2kjRTpqYE27CwsjhBFE3HbqjVVP0kJ5VOuEuIRz8pU",
       "img",
     ],
@@ -78,37 +44,35 @@ const crate = {
   2017: [
     [
       "feed you tom toms",
-      "audio production",
+      "a playground of tom toms",
       "kwFFYuwlSXiLt-XF2_GOLqOUSatYnL9wDQrkVz6FmSI",
       "audio",
     ],
     [
-      "let there be light",
-      "mixtape",
-      "BOGArivNqK0SjBl-HztcoFfFEXIX3joXM5nNfMLz5Jo",
-      "video",
+      "room to room",
+      "moving between soundscapes",
+      "_tjNsloyhJ8qtYjX1x_lkxfN4RkO4NkljGEOGxbJ_RU",
+      "audio",
+    ],
+    [
+      "fear",
+      "Fear and anger are two sides of the same coin. A coin we flip when faced with uncertainty. I am throwing my coin into the fountain of optimism",
+      "_tjNsloyhJ8qtYjX1x_lkxfN4RkO4NkljGEOGxbJ_RU",
+      "audio",
+    ],
+    [
+      "free",
+      "search for space to play",
+      "coG8ZBbEdOEbc-jedjGATNdYdQe2KafqdtsQvoob430",
+      "audio",
     ],
   ],
   2016: [
     [
-      "poly punk",
-      "low poly graphics",
-      "goE9lQYG-HwQPTi0nF8xZCku_TILhg_nwOvU1iROGvQ",
-      "img",
-    ],
-    [
-      "welcome",
-      "algorithmic composition",
-      "goE9lQYG-HwQPTi0nF8xZCku_TILhg_nwOvU1iROGvQ",
-      "video",
-    ],
-  ],
-  2013: [
-    [
-      "bushsk8r",
-      "character design",
-      "4GJuqrg_zxEnSISGc-djC40eN3li_OoZFUtv2xlLr9Y",
-      "img",
+      "found the drums",
+      "expermients with drum arrangements",
+      "bXsicQdUUGoV-kfU22aC5Dq6qsggx-94JM1e_lr_5r0",
+      "audio",
     ],
   ],
   getFromYear(year) {

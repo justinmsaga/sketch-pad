@@ -43,7 +43,6 @@ function createMedia(type, source) {
     default:
       elem = document.createElement("p");
       elem.innerHTML = "private collection";
-      //elem.classList.add("media");
       return elem;
   }
 }
@@ -63,10 +62,9 @@ function displayCuration(year) {
   for (let arcItem of items) {
     const arcCuration = createElem("dt", arcItem.curation);
     const div = createElem("div", "", true, arcItem.curation);
-    const arcCraft = createElem("dd", arcItem.craft);
-    const yearOfCreation = createElem("dd", arcItem.creation);
+    const arcDesc = createElem("dd", arcItem.desc);
     const item = createMedia(arcItem.fType, arcItem.source);
-    addToTag(div, [arcCraft, yearOfCreation, item]);
+    addToTag(div, [arcDesc, item]);
     addToTag(displayArea, [arcCuration, div]);
   }
 
