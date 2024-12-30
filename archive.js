@@ -46,7 +46,7 @@ const crate = {
   2018: [
     [
       "collected",
-      "made this during my uni gradiation ceremony on my phone, from pure feel no headphones or speakers involved",
+      "made this during my university graduation ceremony on my phone, from pure feel no headphones or speakers involved",
       "0jTwYB_b9XurW-hqVJOxuhQhKK8mkFFh1MFNDa9yvVw",
       "audio",
     ],
