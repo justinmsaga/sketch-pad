@@ -6,112 +6,215 @@ class archiveItem {
     //item title
     this.curation = item[1];
 
-    //medium
-    this.desc = item[2];
-
     //item location
-    this.source = `https://arweave.net/${item[3]}`;
+    this.source = `https://arweave.net/${item[2]}`;
 
     //source file type
-    this.fType = item[4];
+    this.fType = item[3];
+
+    //description
+    this.desc = item[4];
   }
 }
 
 // key = year
-// value = [curation, craft, source, file type]
+// value = [creation date, title, source, file type, description]
 
 const crate = {
-  2020: [
+  may: [
     [
-      "city birds",
-      "field recording from Nairobi",
-      "zWlu348fGT5Ke96d8epoEjcGSAi-lyXtOFt8lfTN4tU",
+      "240519",
+      "testing",
+      "k8N8tYhjqi1FGdtL9FjdLuUu6uB9F_bHkh1dpBAMkxs",
       "audio",
+      "starting point",
+    ],
+    [
+      "250519",
+      "response",
+      "gBU46VSqeMtwMvbryKRg2n8-GSnDUjsEPnHVWqSMaJ8",
+      "audio",
+      "",
+    ],
+    [
+      "260519",
+      "signs",
+      "RCQKSXI7A7jXEwImMiyfDfHKb_NzKjNEw7VOPJuDP34",
+      "audio",
+      "",
+    ],
+    [
+      "270519",
+      "below",
+      "xXYUdX_e_kWNsmAK_Ct4gCpQt_-TDjPhOrQLbi-X3Io",
+      "audio",
+      "",
+    ],
+    [
+      "280519",
+      "live wires",
+      "1WdbBmxv7t20waOgw9Tp_kcYUvJHx77CxPXhnvBdI6g",
+      "audio",
+      "",
+    ],
+    [
+      "290519",
+      "shortbread",
+      "50YlvGxm1RTF1URQHpK9pXulUPIk7DSO_AWx4GuJVUg",
+      "audio",
+      "",
+    ],
+    [
+      "300519",
+      "untitled 1",
+      "zytc7DGydkHiNQ-aBnpa1YZKmvYqNAlBw9xbzIQsNKw",
+      "audio",
+      "",
     ],
   ],
-  2019: [
+  june: [
     [
-      "pushing through",
-      "note to future self from past self, keep going it gets better",
-      "C2FMt78fQofI5CbU02nKZYoV82cGguVFDLZZSv6lZS8",
+      "010619",
+      "untitled 2",
+      "S3PuVvbKvhM2nrq_y-wANZIw_EXPBy2e-2B_tPDmwr4",
+      "audio",
+      "",
+    ],
+    [
+      "020619",
+      "homework",
+      "beqs16Ddot6aJv-PJcRIhZ4OpGV0Ru0bm9mGjohG5xg",
       "audio",
     ],
     [
-      "intro to mind palace",
-      "soundscape to my brain, the forest version 0",
-      "pVKVszbJHFsW1UJ1OZsWoSw-C12RqHA9eajEfmsun_Y",
+      "030619",
+      "untitled 3",
+      "YKw_bSFXxqGxFB95N2R9r4z8OYciYcM9uFYgS8vMe4g",
       "audio",
+      "",
+    ],
+    [
+      "060619",
+      "untitled 4",
+      "8L0zzMMmZ3V1_2TqgN1fXWVX2rBZkpQPdjGcyDKeqqE",
+      "audio",
+      "",
+    ],
+    [
+      "100619",
+      "wet bass",
+      "l8JY32Rlj_c1GL-hGPf5rqSszZMrQ9C_lSYrSNc6eRw",
+      "audio",
+      "",
+    ],
+    [
+      "110619",
+      "untitled 5",
+      "1-u1nil_HFV8v6lJDDD46KFQI7qWnxXOZ1o6JcrAwvk",
+      "audio",
+      "",
+    ],
+    [
+      "140619",
+      "interlude",
+      "FMA-dWAaW-in3rcAT1WZbHyOAbcXT0LdJMR-O7HWw9g",
+      "audio",
+      "",
+    ],
+    [
+      "180619",
+      "a bit dark",
+      "JKcjbFRPsmCl46lsdPpz0wb25rdkyUBhv_n5tscTiS8",
+      "audio",
+      "",
+    ],
+    [
+      "200619",
+      "untitled 6",
+      "OrctClJto1huGmxafHwW97OIARGQQXvzq3bG06o7O_Y",
+      "audio",
+      "",
+    ],
+    [
+      "230619",
+      "choo choo",
+      "KKLNK1xvS9Uj-sqECZz2EqcC8V_ttm74KKlb1xksvpc",
+      "audio",
+      "",
+    ],
+    [
+      "260619",
+      "untitled 7",
+      "f1_34JCl6bNGKoC5-DY_y6VYlpGpCI_SkFFeSXlBuGk",
+      "audio",
+      "",
+    ],
+    [
+      "280619",
+      "untitled 8",
+      "f_SVOHB8MxRVHJYGuI_aK-8EmPe30CyLIh7G7eHfiGo",
+      "audio",
+      "",
+    ],
+    [
+      "290619",
+      "untitled 9",
+      "1OZtX8YmrnPTPhUaPtHprAkNm_Ky93QI6brf3m2x4FY",
+      "audio",
+      "",
     ],
   ],
-  2018: [
+  july: [
     [
-      "collected",
-      "made this during my university graduation ceremony on my phone, from pure feel no headphones or speakers involved",
-      "0jTwYB_b9XurW-hqVJOxuhQhKK8mkFFh1MFNDa9yvVw",
+      "020719",
+      "1 step forward, 2 steps back",
+      "LRDLtdXwopfJ9sH7PwZ9jtwouorTKVdxECukeH49NuM",
       "audio",
-    ],
-    [
-      "chanel remix",
-      "my version of chanel by frank ocean",
-      "qwEMejlP9FZ5terhB7iAHUUWx4BMQE-QcHOo3i8k6oI",
-      "audio",
-    ],
-    [
-      "feel the forest",
-      "an audio representation of my train of thought",
-      "3m3vWEQtzcUgNfitnFB6j8ur6d2K9DOjD9JPxbHuyIM",
-      "audio",
+      "regression",
     ],
   ],
-  2017: [
+  august: [
     [
-      "feed you tom toms",
-      "a playground of tom toms",
-      "kwFFYuwlSXiLt-XF2_GOLqOUSatYnL9wDQrkVz6FmSI",
+      "030819",
+      "untitled 10",
+      "BZTVIJRyVNluXJPPuCUu0qt-1TOB_rDFvMPzR6wMmwg",
       "audio",
+      "",
     ],
     [
-      "room to room",
-      "moving between soundscapes",
-      "_tjNsloyhJ8qtYjX1x_lkxfN4RkO4NkljGEOGxbJ_RU",
+      "050819",
+      "the forest after dark",
+      "-39nDgmrHglb6enrjf-AEv5hBRipyQE4MjTyGjVN1QA",
       "audio",
+      "",
     ],
     [
-      "fear",
-      "Fear and anger are two sides of the same coin. A coin we flip when faced with uncertainty. I am throwing my coin into the fountain of optimism",
-      "_tjNsloyhJ8qtYjX1x_lkxfN4RkO4NkljGEOGxbJ_RU",
+      "150819",
+      "the marathon continues",
+      "K5BV5hS-AVfDTNVxdfseEX-UihJVGX7_TqJQmnE5trQ",
       "audio",
+      "",
     ],
     [
-      "free",
-      "search for space to play",
-      "coG8ZBbEdOEbc-jedjGATNdYdQe2KafqdtsQvoob430",
+      "280819",
+      "untitled 11",
+      "L-ooQsgu7-FEF_a26VCLPyOTmv-5QTb-BvALmy94kGg",
       "audio",
-    ],
-  ],
-  2016: [
-    [
-      "found the drums",
-      "expermients with drum arrangements",
-      "bXsicQdUUGoV-kfU22aC5Dq6qsggx-94JM1e_lr_5r0",
-      "audio",
+      "",
     ],
   ],
-  getFromYear(year) {
+  getFromMonth(month) {
     //return items from year
-    return this[year];
+    return this[month];
   },
 };
 
 function curate() {
-  let year = "";
+  let month = "";
   const box = crate;
-  function getCurated(curationYear) {
-    year = curationYear;
-    return box
-      .getFromYear(year)
-      .map((c) => [`${year}`, ...c])
-      .map((c) => new archiveItem(c));
+  function getCurated(curationMonth) {
+    month = curationMonth;
+    return box.getFromMonth(month).map((c) => new archiveItem(c));
   }
   return getCurated;
 }
