@@ -1,24 +1,27 @@
 <!doctype html>
 <html>
     <head>
-        <title>archive</title>
+        <title>jukebox</title>
         <link rel="stylesheet" href="./index.css" />
-        <script src="./script.js" type="module"></script>
+        <script src="./jukeScript.js" type="module"></script>
     </head>
-
     <body>
         <header>
-            <h1>synth explorations</h1>
+            <h1>audio archive</h1>
         </header>
-        <nav class="selectors">
-            <button>may</button>
-            <button>june</button>
-            <button>july</button>
-            <button>august</button>
-        </nav>
-        <main>
-            <p class="desc">select title for more details</p>
-            <dl id="dataList"></dl>
+        <h2>projects:</h2>
+        <nav class="selectors"></nav>
+        <section class="projectDetails"></section>
+        <section class="tracks"></section>
+        <main class="player">
+            <audio>audio</audio>
         </main>
+        <footer>
+            <div class="love"></div>
+            <div class="inspo"></div>
+            <div class="self"></div>
+            <div class="ego"></div>
+            <div class="home"></div>
+        </footer>
     </body>
 </html>
