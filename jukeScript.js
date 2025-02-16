@@ -19,7 +19,7 @@ buttons.forEach((b) => {
   b.addEventListener("click", () => {
     projectDetails.innerHTML = "";
     displayProject(b.textContent);
-    clickedBtn(b);
+    clickedProject(b);
     audioPlayer.removeAttribute("controls");
   });
 });
@@ -38,7 +38,11 @@ function btnClick() {
   }
   return updateClk;
 }
-let clickedBtn = btnClick();
+
+//styling update for project btns
+let clickedProject = btnClick();
+
+//styling update for track btns
 let clickedTrack = btnClick();
 
 //inputs(element type, text context, hidden if true, element name)
@@ -69,14 +73,12 @@ function displayProject(pName) {
   const project = curator(pName);
 
   //create element with project details
-  const projElem = createElem("dl");
-  addToTag(projElem, [
-    createElem("dt", project.name),
-    createElem("dd", project.range),
+  addToTag(projectDetails, [
+    createElem("p", project.name),
+    createElem("p", project.range),
   ]);
 
-  //add to details section
-  projectDetails.appendChild(projElem);
+  //add tracks to page
   updateTracks(project.tracks);
 }
 
@@ -84,6 +86,8 @@ function displayProject(pName) {
 const tracksSection = document.querySelector(".tracks");
 function updateTracks(trackList) {
   tracksSection.innerHTML = "";
+
+  //from track list create track buttons and event listener to update audio
   let trackBtn = trackList.map((track) => {
     let btn = createElem("button", track.curation);
     btn.addEventListener("click", () => {
@@ -93,13 +97,19 @@ function updateTracks(trackList) {
     });
     return btn;
   });
+
+  //add buttons to page
   addToTag(tracksSection, trackBtn);
 }
+
 //------update player
 const audioPlayer = document.querySelector(".player audio");
 const playerSection = document.querySelector(".player");
 function updateAudio(trackSource) {
+  //set audio source
   audioPlayer.setAttribute("src", trackSource);
+
+  //after file has loaded
   audioPlayer.onloadeddata = () => {
     audioPlayer.setAttribute("controls", "controls");
   };
